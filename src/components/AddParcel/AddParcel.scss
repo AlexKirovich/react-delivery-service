@@ -1,0 +1,54 @@
+.add-parcel-form-block {
+  max-width: 600px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.add-parcel-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+
+  label {
+    margin-right: 0.5rem;
+    font-size: 16px;
+  }
+  input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    margin-top: 0.2rem;
+    font-family: "Montserrat", sans-serif;
+    padding: 0.5rem 1rem;
+    border: 1px solid #000000;
+    font-size: 14px;
+  }
+  select{
+    background:none;
+    padding: 0.5rem 1rem;
+    border: 1px solid #000000;
+    font-size: 14px;
+  }
+  textarea{
+    padding: 0 0.5rem;
+    font-size: 14px;
+  }
+  button {
+    padding: 0.7rem 2rem;
+    border: none;
+    background-color: #000000;
+    border: 1px solid #000000;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+}
+.link{
+    padding: 0.7rem 2rem;
+    text-decoration: none;
+    border: 1px solid #000000;
+    color: #000000;
+    margin-left: 2rem;
+    cursor: pointer;
+}
