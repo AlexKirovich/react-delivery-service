@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useEffect, useState } from "react";
+import React, { createContext, useReducer, useEffect } from "react";
 import AppReducer from "./AppReducer.jsx";
 
 const initialState = JSON.parse(localStorage.getItem('initialState')) || { parcels: [] };
