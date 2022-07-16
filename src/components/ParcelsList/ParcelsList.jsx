@@ -1,30 +1,15 @@
-import React from "react";
-import { nanoid } from "nanoid";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import './ParcelsList.scss'
+import { GlobalContext } from "../../context/GlobalState";
 
 const ParcelsList = () => {
-  const list = [
-    {
-      orgn: "Kharkiv",
-      dest: "Kiev",
-      type: "Gadget",
-      date: "03/11/2020",
-      info: "Chilled chicken",
-      id: nanoid(),
-    },
-    {
-      orgn: "Sumy",
-      dest: "Mariupol",
-      type: "Other",
-      date: "03/12/2021",
-      info: "Niceeeeeeee",
-      id: nanoid(),
-    },
-  ];
+
+    const { parcels, removeParcel } = useContext(GlobalContext);
+
   return (
     <div className="list">
-      {list.map((parcel) => {
+      {parcels.map((parcel) => {
         return (
           <div className="parcel">
             <div className="parcel-info">
@@ -38,7 +23,7 @@ const ParcelsList = () => {
               <Link to={`/edit/:${parcel.id}`} className="parcel-edit">
                 Edit
               </Link>
-              <button>Delete</button>
+              <button onClick={() => removeParcel(parcel.id)}>Delete</button>
             </div>
           </div>
         );
