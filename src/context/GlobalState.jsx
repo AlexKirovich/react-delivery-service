@@ -1,14 +1,16 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, useEffect, useState } from "react";
 import AppReducer from "./AppReducer.jsx";
 
-const initialState = {
-  parcels: [],
-};
-
+const initialState = JSON.parse(localStorage.getItem('initialState')) || { parcels: [] };
 export const GlobalContext = createContext(initialState);
 
 export const GlobalProvider = ({ children }) => {
+
   const [state, dispatch] = useReducer(AppReducer, initialState);
+
+  useEffect(() => {
+    localStorage.setItem("initialState", JSON.stringify(state));
+  }, [state])
 
   const removeParcel = (id) => {
     dispatch({
